@@ -304,6 +304,7 @@
                 {
                     @Html.AntiForgeryToken()
                     <hr />
+                    
                             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                             <div class="form-group">
                                 @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
@@ -377,7 +378,9 @@
     <link rel="stylesheet" type="text/css" href="~/LoginUI/css/main.css">
 
     @*Login card final start*@
-    
+    @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+    {
+        @Html.AntiForgeryToken()
     <div class="limiter">
         <div class="container-login100" style="background-image: url('images/bg-01.jpg');">
             <div class="wrap-login100">
@@ -386,17 +389,21 @@
                         <i class="zmdi zmdi-landscape"></i>
                     </span>
 
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
                     <span class="login100-form-title p-b-34 p-t-27">
                         Log in
                     </span>
 
                     <div class="wrap-input100 validate-input" data-validate="Enter username">
-                        <input class="input100" type="text" name="username" placeholder="Username">
+                        <input class="input100" type="text" name="Email" id="Email" placeholder="Username">
                         <span class="focus-input100" data-placeholder="&#xf207;"></span>
-                    </div>
 
+                    </div>
+                   
+                 
                     <div class="wrap-input100 validate-input" data-validate="Enter password">
-                        <input class="input100" type="password" name="pass" placeholder="Password">
+                        <input class="input100" type="password" name="Password" id="Password" placeholder="Password">
                         <span class="focus-input100" data-placeholder="&#xf191;"></span>
                     </div>
 
@@ -422,6 +429,7 @@
             </div>
         </div>
     </div>
+    }
         <!-- page-body-wrapper ends -->
     
     @*login card final end*@

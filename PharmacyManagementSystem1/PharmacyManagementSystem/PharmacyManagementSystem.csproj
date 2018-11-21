@@ -184,6 +184,7 @@
     <Compile Include="Models\AllSale.cs">
       <DependentUpon>PharmacyDb.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\ApplicationBaseController.cs" />
     <Compile Include="Models\AspNetRole.cs">
       <DependentUpon>PharmacyDb.tt</DependentUpon>
     </Compile>
@@ -205,7 +206,6 @@
     </Compile>
     <Compile Include="Models\HttpActionContext.cs" />
     <Compile Include="Models\IdentityModels.cs" />
-    <Compile Include="Models\Info.cs" />
     <Compile Include="Models\LoginRole.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\MedicineCategory.cs">
@@ -1127,10 +1127,12 @@
     <Content Include="vendors\iconfonts\mdi\fonts\materialdesignicons-webfontb675.ttf" />
     <Content Include="vendors\iconfonts\mdi\fonts\materialdesignicons-webfontb675.woff" />
     <Content Include="vendors\iconfonts\mdi\fonts\materialdesignicons-webfontd41d.eot" />
+    <Content Include="Views\Dashboard\dash.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\Accountant\" />
+    <Folder Include="Views\ApplicationBase\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

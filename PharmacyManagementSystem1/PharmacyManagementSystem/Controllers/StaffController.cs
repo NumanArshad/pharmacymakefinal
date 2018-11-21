@@ -18,7 +18,7 @@ using System.Web.Security;
 
 namespace PharmacyManagementSystem.Controllers
 {
-    public class StaffController : Controller
+    public class StaffController : ApplicationBaseController
     {
         PharmacyDBEntities2 _db;
        

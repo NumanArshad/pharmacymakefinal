@@ -6,7 +6,7 @@ using System.Web.Mvc;
 using PharmacyManagementSystem.Models;
 namespace PharmacyManagementSystem.Controllers
 {
-    public class FinanceController : Controller
+    public class FinanceController : ApplicationBaseController
     {
         PharmacyDBEntities2 _db;
         public FinanceController()

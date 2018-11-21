@@ -6,7 +6,7 @@ using System.Web.Mvc;
 using PharmacyManagementSystem.Models;
 namespace PharmacyManagementSystem.Controllers
 {
-    public class DashboardController : Controller
+    public class DashboardController : ApplicationBaseController // Controller
     {
         PharmacyDBEntities2 _db;
         public DashboardController()
@@ -18,7 +18,7 @@ namespace PharmacyManagementSystem.Controllers
         public ActionResult Index()
         {
          
-            return View();
+            return View("dash");
         }
 
         // GET: Dashboard/Details/5

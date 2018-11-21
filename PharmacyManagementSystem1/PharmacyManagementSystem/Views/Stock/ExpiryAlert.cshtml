@@ -99,16 +99,15 @@
                                                     </button>
                                                 </div>
                                                 <div class="col-lg-12" style="margin-top:5px">
-                                                    <button type="button" class="btn btn-danger deleteStock" style="color:white" data-id="@item.SerialNumber">
+                                                    <div type="button" class="btn btn-danger" style="color:white">
                                                         <span class="glyphicon glyphicon-trash"></span>
 
                                                         @Html.ActionLink("Delete", "Delete", new { id = item.SerialNumber },
-                    new { onclick = "return confirm('Are you sure you wish to delete this Medicine?');", })
+                    new { @class = "link-button",onclick = "return confirm('Are you sure you wish to delete this Medicine?');", })
 
 
-                                                    </button>
-                                                    @Html.ActionLink("Delete", "Delete", new { id = item.SerialNumber },
-                    new { onclick = "return confirm('Are you sure you wish to delete this Medicine?');", })
+                                                    </div>
+                                                    
 
                                                     @*   <button type="button" class="btn btn-danger btn-xs" onclick="location.href='@Htm("Delete", "Delete", new { id = item.SerialNumber },
                                                         new { onclick = "return confirm('Are you sure you wish to delete this Medicine?');" })'">Rr</button>*@

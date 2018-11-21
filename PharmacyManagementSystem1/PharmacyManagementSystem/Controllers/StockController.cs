@@ -6,7 +6,7 @@ using System.Web.Mvc;
 using PharmacyManagementSystem.Models;
 namespace PharmacyManagementSystem.Controllers
 {
-    public class StockController : Controller
+    public class StockController : ApplicationBaseController //Controller
     {
         PharmacyDBEntities2 _db;
         public StockController()
@@ -18,6 +18,7 @@ namespace PharmacyManagementSystem.Controllers
         {
             return View(_db.Stocks.ToList());
         }
+     
 
         // GET: Stock/Details/5
         public ActionResult Details(string id)
@@ -56,6 +57,7 @@ namespace PharmacyManagementSystem.Controllers
                     med.ExpiryDate = collection.ExpiryDate;
                     med.Quantity = collection.Quantity;
                     med.Category = collection.Category;
+                    med.AddedDate = DateTime.Now;
                     _db.Stocks.Add(med);
                     _db.SaveChanges();
                     // TODO: Add insert logic here
@@ -70,52 +72,52 @@ namespace PharmacyManagementSystem.Controllers
                 return View();
             }
         }
-        /*public ActionResult CheckNameExists(string Name)
+
+
+
+
+        public JsonResult CheckUserNameExists(string Name)
+
         {
-            bool UserExists = false;
+ bool UserExists = false;
 
-            try
-            {
-                var nameexits = _db.Stocks.Where(md => md.Name == Name).ToList();
-                if (nameexits.Count() > 0)
-                {
-                    UserExists = true;
-                }
-                else
-                {
-                    UserExists = false;
-                }
+            try { 
 
-                return Json(!UserExists, JsonRequestBehavior.AllowGet);
-            }
-            catch (Exception)
-            {
-                return Json(false, JsonRequestBehavior.AllowGet);
-            }
-        }*/
-        public ActionResult CheckUserNameExists(string Category)
-        {
-            bool UserExists = false;
+            
+                var nameexits = _db.Stocks.Where(x => x.Name == Name).ToList();
 
-            try
-            {
-               var nameexits = _db.Stocks.Where(md => md.Category==Category).ToList();
                     if (nameexits.Count() > 0)
+
                     {
+
                         UserExists = true;
+
                     }
+
                     else
+
                     {
+
                         UserExists = false;
+
                     }
+
                 
+
                 return Json(!UserExists, JsonRequestBehavior.AllowGet);
+
             }
+
             catch (Exception)
+
             {
+
                 return Json(false, JsonRequestBehavior.AllowGet);
+
             }
+
         }
+
 
 
         public ActionResult addMedicine()
@@ -137,6 +139,7 @@ namespace PharmacyManagementSystem.Controllers
                 med.ExpiryDate = collection.ExpiryDate;
                 med.Quantity = collection.Quantity;
                 med.Category = collection.Category;
+                med.AddedDate = DateTime.Now;
                 _db.Stocks.Add(med);
                 _db.SaveChanges();
 

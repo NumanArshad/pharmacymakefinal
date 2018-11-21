@@ -517,8 +517,7 @@ namespace PharmacyManagementSystem.Controllers
 
         private ActionResult RedirectToLocal(string returnUrl)
         {
-            //Info info = new Info();
-            //info.Username = _db.AspNetUsers.Find(User.Identity.GetUserId()).AccountUserName;
+            
             if (Url.IsLocalUrl(returnUrl))
             {
 
@@ -528,9 +527,13 @@ namespace PharmacyManagementSystem.Controllers
                return Redirect(returnUrl);
                 
             }
+            //var userId = "7f19ac65-5cc6-4c68-bf4b-859fe9f91e3a";
+            //ViewBag.username = _db.AspNetUsers.Where(x => x.Id == userId).First().AccountUserName;
 
-         //   string loginId = User.Identity.GetUserId();
+            //   string loginId = User.Identity.GetUserId();
+            //Info inf = new Info();
 
+            //inf.Username = _db.AspNetUsers.Where(x => x.Id == User.Identity.GetUserId()).FirstOrDefault().AccountUserName;
 
             //LoginRole.role = _db.AspNetRoles.Where(x => x.Id == loginId).FirstOrDefault().Name;
             return RedirectToAction("Index", "Dashboard");
